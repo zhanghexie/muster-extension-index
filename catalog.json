@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "packageKey": "muster/code-animation",
+      "publisherId": "muster",
+      "publisherName": "Muster",
+      "publisherUrl": "https://github.com/zhanghexie",
+      "extensionId": "code-animation",
+      "name": "代码动画",
+      "description": "按画面挑选与比较代码动画风格，在工作区集中管理、预览作品并继续制作。",
+      "version": "0.3.1",
+      "fingerprint": "package-extension:9f34143c84b283db0068c8b1e32c6b46c96b8517da44fb9eb3441a90acb6f82d",
+      "sha256": "8a3e2c7b4da3335ab35677aeb26a7c207e70ae73165092371ee11468e277dda6",
+      "previousFingerprints": [
+        "package-extension:f60ca90cb522bbe5d39415d76da2a0b89f5a532b8f53c24f5e708f27e1fc7552",
+        "package-extension:fb639aab033a4a508cfbd8f9e8794db6f5fa3fa97ae60d885106d80e0e486100"
+      ],
+      "repositoryUrl": "https://github.com/zhanghexie/muster-extension-code-animation",
+      "packageUrl": "https://api.github.com/repos/zhanghexie/muster-extension-code-animation/contents/releases/0.3.1.json?ref=8853f5d15a0d4820cf9a31ac3e8f34e3eeebe98f",
+      "minHostVersion": "0.1.34",
+      "readme": "# 代码动画\n\nMuster extension `code-animation`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `code-animation/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
+      "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
+      "updatedAt": "2026-11-18T05:45:14.831Z"
+    },
+    {
+      "packageKey": "muster/dsh-media-desk",
+      "publisherId": "muster",
+      "publisherName": "Muster",
+      "publisherUrl": "https://github.com/zhanghexie",
+      "extensionId": "dsh-media-desk",
+      "name": "媒体创作台",
+      "description": "原版 dsh-media-desk 界面：灵感画布、内容、排期、复盘、风格与成稿工作区。",
+      "version": "0.1.1",
+      "fingerprint": "package-extension:e709753ed13175c8fb3a93872ee5950e4b12548e9695278d54d2f02efff55b70",
+      "sha256": "3ec4c7336b7da71dc2cc52cff7cf9a13c536cb035b113a6808713e8a4b211328",
+      "previousFingerprints": [
+        "package-extension:a7b46094ef1cc884b0d91698f77fc650105f2f9369bcc0e8b3455a1f00b54384",
+        "package-extension:15b8f4504cdde526ea809c4bab1d8bf4330b9a9b5231c29ca53e231df6f8b9ce"
+      ],
+      "repositoryUrl": "https://github.com/zhanghexie/muster-extension-dsh-media-desk",
+      "packageUrl": "https://api.github.com/repos/zhanghexie/muster-extension-dsh-media-desk/contents/releases/0.1.1.json?ref=87175e24ba8ef0fbe643202a06533ef73322971a",
+      "minHostVersion": "0.1.34",
+      "readme": "# 媒体创作台\n\nMuster extension `dsh-media-desk`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `dsh-media-desk/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](dsh-media-desk/README.md).\n\nRun `npm ci` and `npm run build` at the repository root to rebuild the checked-in `ui/` files.\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
+      "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
+      "updatedAt": "2026-11-18T05:45:24.666Z"
+    },
+    {
+      "packageKey": "muster/gomoku",
+      "publisherId": "muster",
+      "publisherName": "Muster",
+      "publisherUrl": "https://github.com/zhanghexie",
+      "extensionId": "gomoku",
+      "name": "五子棋",
+      "description": "人和 AI 共用同一棋盘状态。",
+      "version": "4.0.1",
+      "fingerprint": "package-extension:337c35ae5a5ca31b7885daf230106cf922c2b1ac2f571914a21c10c22c2b193d",
+      "sha256": "6e7b3a9844b47edc4257106aeb0e0c42cdf7cfdee2c5313f2dcba3ed92108230",
+      "previousFingerprints": [
+        "package-extension:961132b59d05c37e381bbec4c4c190dc2ec0c44b1b1e9892616ef1ab2ef5b2d9",
+        "package-extension:ded345c73b05012eedbf15415786a3912711b71a0806bfb349b5af2a159f46d3"
+      ],
+      "repositoryUrl": "https://github.com/zhanghexie/muster-extension-gomoku",
+      "packageUrl": "https://api.github.com/repos/zhanghexie/muster-extension-gomoku/contents/releases/4.0.1.json?ref=655a6b3c10bd5352f7df0fb529b50ed044bbae16",
+      "minHostVersion": "0.1.34",
+      "readme": "# 五子棋\n\nMuster extension `gomoku`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `gomoku/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n",
+      "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
+      "updatedAt": "2026-11-18T05:45:39.976Z"
+    },
+    {
+      "packageKey": "muster/guizang-design",
+      "publisherId": "muster",
+      "publisherName": "Muster",
+      "publisherUrl": "https://github.com/zhanghexie",
+      "extensionId": "guizang-design",
+      "name": "歸藏设计",
+      "description": "使用设计技能、创作工作流和语气档案，在工作区管理作品。",
+      "version": "0.1.1",
+      "fingerprint": "package-extension:913c419939de04554f40e13f3acc8691b989be545f07de4d1d6dfdb069149da4",
+      "sha256": "e0ce876ff099675c1aef711de773786965e2ed5ed1da64d1968862cb8b12e59f",
+      "previousFingerprints": [
+        "package-extension:f0e8fc91659d181b278f05bcc3bba23f67f6578b03e6792713a2cca3f84edcd8",
+        "package-extension:ecf5e38eb6e4f06c3649c337c777a414ea30baa3501388283a23b17c8b2d5750"
+      ],
+      "repositoryUrl": "https://github.com/zhanghexie/muster-extension-guizang-design",
+      "packageUrl": "https://api.github.com/repos/zhanghexie/muster-extension-guizang-design/contents/releases/0.1.1.json?ref=53d8bc8e1663257b14f10c69005707a163991811",
+      "minHostVersion": "0.1.34",
+      "readme": "# 歸藏设计\n\nMuster extension `guizang-design`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `guizang-design/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](guizang-design/README.md).\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
+      "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
+      "updatedAt": "2026-11-18T05:45:42.844Z"
+    },
+    {
+      "packageKey": "muster/library",
+      "publisherId": "muster",
+      "publisherName": "Muster",
+      "publisherUrl": "https://github.com/zhanghexie",
+      "extensionId": "library",
+      "name": "图书馆",
+      "description": "本地 EPUB、TXT、Markdown 阅读器：段落进度、清晰目录、私人书签与舒适排版。",
+      "version": "1.0.1",
+      "fingerprint": "package-extension:849b6a66431d2bfdae52a3c4882dfc506bbf6f9870cf3fa6cb571e875b10d3ef",
+      "sha256": "d19ba957491d66618bbf8781c5a4ecbc45408d95401bff57f1fdf8324e557224",
+      "previousFingerprints": [
+        "package-extension:5d26006146ee5b987afe9cdbd140af91247e394f3bd40476a599074e48b46062",
+        "package-extension:373e5e5c869e21eec92e7fc4bfa503516badfba133ad6a0ab537396b980a1e44"
+      ],
+      "repositoryUrl": "https://github.com/zhanghexie/muster-extension-library",
+      "packageUrl": "https://api.github.com/repos/zhanghexie/muster-extension-library/contents/releases/1.0.1.json?ref=e4b24f7882fbb1904b22360d5d04143ee0cb7bba",
+      "minHostVersion": "0.1.34",
+      "readme": "# 图书馆\n\nMuster extension `library`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `library/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](library/README.md).\n\nRun `npm ci` and `npm run build` at the repository root to rebuild the checked-in `ui/` files.\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
+      "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
+      "updatedAt": "2026-11-18T05:45:46.593Z"
+    },
+    {
+      "packageKey": "muster/rubiks-cube",
+      "publisherId": "muster",
+      "publisherName": "Muster",
+      "publisherUrl": "https://github.com/zhanghexie",
+      "extensionId": "rubiks-cube",
+      "name": "魔方",
+      "description": "精细三维魔方、直接拖转、公式练习；AI 仅根据当前六面观察与推理。",
+      "version": "1.0.1",
+      "fingerprint": "package-extension:e5f1298e2eba132756b64b91d8876a5f3bedb8b9fbf0f2689c2096d45745b42c",
+      "sha256": "893f711f09d20d6b9dc383bb9205572dae4869a12f3f00f7650a500ef7e212d6",
+      "previousFingerprints": [
+        "package-extension:1502d507c6b76ef98f2f68e8701a95a670112593845d8c6d7167486932361e8b",
+        "package-extension:5de7f2a549431704f36a59dcded800572451fc069782127caf196b44aee27a29"
+      ],
+      "repositoryUrl": "https://github.com/zhanghexie/muster-extension-rubiks-cube",
+      "packageUrl": "https://api.github.com/repos/zhanghexie/muster-extension-rubiks-cube/contents/releases/1.0.1.json?ref=7a4c72b72ada418d4ff55d3c2dbef4d22a523960",
+      "minHostVersion": "0.1.34",
+      "readme": "# 魔方\n\nMuster extension `rubiks-cube`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `rubiks-cube/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](rubiks-cube/README.md).\n\nRun `npm ci` and `npm run build` at the repository root to rebuild the checked-in `ui/` files.\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
+      "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
+      "updatedAt": "2026-11-18T05:45:49.835Z"
+    }
+  ]
+}
