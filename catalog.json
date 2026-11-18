@@ -21,7 +21,8 @@
       "minHostVersion": "0.1.34",
       "readme": "# 代码动画\n\nMuster extension `code-animation`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `code-animation/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
       "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
-      "updatedAt": "2026-11-18T05:45:14.831Z"
+      "updatedAt": "2026-11-18T05:45:14.831Z",
+      "category": "creative"
     },
     {
       "packageKey": "muster/dsh-media-desk",
@@ -43,7 +44,8 @@
       "minHostVersion": "0.1.34",
       "readme": "# 媒体创作台\n\nMuster extension `dsh-media-desk`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `dsh-media-desk/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](dsh-media-desk/README.md).\n\nRun `npm ci` and `npm run build` at the repository root to rebuild the checked-in `ui/` files.\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
       "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
-      "updatedAt": "2026-11-18T05:45:24.666Z"
+      "updatedAt": "2026-11-18T05:45:24.666Z",
+      "category": "creative"
     },
     {
       "packageKey": "muster/gomoku",
@@ -65,7 +67,8 @@
       "minHostVersion": "0.1.34",
       "readme": "# 五子棋\n\nMuster extension `gomoku`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `gomoku/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n",
       "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
-      "updatedAt": "2026-11-18T05:45:39.976Z"
+      "updatedAt": "2026-11-18T05:45:39.976Z",
+      "category": "games"
     },
     {
       "packageKey": "muster/guizang-design",
@@ -87,7 +90,8 @@
       "minHostVersion": "0.1.34",
       "readme": "# 歸藏设计\n\nMuster extension `guizang-design`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `guizang-design/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](guizang-design/README.md).\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
       "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
-      "updatedAt": "2026-11-18T05:45:42.844Z"
+      "updatedAt": "2026-11-18T05:45:42.844Z",
+      "category": "creative"
     },
     {
       "packageKey": "muster/library",
@@ -109,7 +113,8 @@
       "minHostVersion": "0.1.34",
       "readme": "# 图书馆\n\nMuster extension `library`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `library/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](library/README.md).\n\nRun `npm ci` and `npm run build` at the repository root to rebuild the checked-in `ui/` files.\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
       "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
-      "updatedAt": "2026-11-18T05:45:46.593Z"
+      "updatedAt": "2026-11-18T05:45:46.593Z",
+      "category": "reading"
     },
     {
       "packageKey": "muster/rubiks-cube",
@@ -131,7 +136,8 @@
       "minHostVersion": "0.1.34",
       "readme": "# 魔方\n\nMuster extension `rubiks-cube`; migrated from `zhanghexie/muster@f049b476`.\n\n- Installable source directory: `rubiks-cube/`.\n- Versioned installation artifacts: `releases/`.\n- [Muster extension catalog](https://github.com/zhanghexie/muster-extension-index).\n\nSee [extension documentation](rubiks-cube/README.md).\n\nRun `npm ci` and `npm run build` at the repository root to rebuild the checked-in `ui/` files.\n\nRun `npm ci` and `npm test` to run the extension regression tests.\n",
       "releaseNotes": "首次从 Muster 主仓迁出，包含主题与交互优化。",
-      "updatedAt": "2026-11-18T05:45:49.835Z"
+      "updatedAt": "2026-11-18T05:45:49.835Z",
+      "category": "games"
     }
   ]
 }
