@@ -13,7 +13,7 @@
 
 ## 客户端访问
 
-为上述六个扩展仓库及本索引授予细粒度 GitHub token 的 Contents 只读权限。通过 Muster 的启动环境设置 `MUSTER_EXTENSION_CENTER_GITHUB_TOKEN`，重启应用后打开扩展中心。
+在 Muster 中打开「扩展中心」即可浏览与安装。索引和安装包均可匿名读取。
 
 ## 发布版本
 
