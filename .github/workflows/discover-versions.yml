@@ -1,0 +1,77 @@
+name: Discover extension versions
+on:
+  schedule:
+    - cron: '23 2 * * *'
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Public repository URL from a reviewed community submission
+        type: string
+        required: false
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: extension-version-candidates
+  cancel-in-progress: false
+jobs:
+  discover:
+    if: github.repository == 'zhanghexie/muster-extension-index' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Find ready release packages from pinned tags
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SUBMITTED_REPOSITORY: ${{ inputs.repository }}
+        run: |
+          node scripts/discover-public-extension-releases.mjs \
+            --catalog catalog.json --community community-catalog.json \
+            --output "$RUNNER_TEMP/extension-versions" --repository "$SUBMITTED_REPOSITORY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proposed-extension-versions
+          path: ${{ runner.temp }}/extension-versions/
+          if-no-files-found: ignore
+          retention-days: 3
+      - name: Prepare a review branch and pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: zhanghexie/muster-extension-index
+        run: |
+          candidates="$RUNNER_TEMP/extension-versions"
+          count="$(node -p 'require(process.argv[1]).candidates.length' "$candidates/review.json")"
+          if [ "$count" = 0 ]; then
+            echo 'All approved versions are current.'
+            exit 0
+          fi
+          cp "$candidates/catalog.json" "$candidates/community-catalog.json" .
+          git add -- catalog.json community-catalog.json
+          digest="$(git diff --cached --binary | sha256sum | cut -c1-16)"
+          branch="codex/extension-versions-$digest"
+          gh auth setup-git
+          if ! git ls-remote --exit-code origin "refs/heads/$branch" >/dev/null; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git switch -c "$branch"
+            git commit -m 'Propose new extension release versions'
+            git push origin "HEAD:refs/heads/$branch"
+          fi
+          existing="$(gh pr list --repo "$GH_REPO" --head "$branch" --state open --json url --jq '.[0].url // empty')"
+          if [ -n "$existing" ]; then
+            echo "$existing" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          body="$RUNNER_TEMP/extension-review.md"
+          printf 'Review the pinned commits, digests, and runtime capability changes in the workflow artifact.\n\nRun: https://github.com/%s/actions/runs/%s\n' "$GH_REPO" "$GITHUB_RUN_ID" > "$body"
+          if ! gh pr create --repo "$GH_REPO" --base main --head "$branch" --title 'Review extension release candidates' --body-file "$body"; then
+            echo "Review branch: https://github.com/$GH_REPO/compare/main...$branch?expand=1" >> "$GITHUB_STEP_SUMMARY"
+            echo '::warning::The review branch is ready. Opening its pull request requires repository permission.'
+          fi

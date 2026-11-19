@@ -1,0 +1,56 @@
+name: Publish the extension mirror
+on:
+  push:
+    branches: [main]
+    paths: [catalog.json, community-catalog.json, 'scripts/**', .github/workflows/publish-pages.yml]
+  workflow_dispatch:
+    inputs:
+      redeploy:
+        description: Redeploy the approved catalog even if production already has it
+        type: boolean
+        default: false
+  schedule:
+    - cron: '47 2 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: extension-pages-production
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'zhanghexie/muster-extension-index' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PAGES_ORIGIN: https://muster-extension-center.pages.dev
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Assemble the approved directory and packages
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          node scripts/build-extension-center-mirror.mjs
+          --catalog catalog.json --community community-catalog.json --output "$RUNNER_TEMP/extension-pages"
+          --origin "$PAGES_ORIGIN"
+      - name: Install the pinned Pages deployment tool
+        run: npm install --prefix "$RUNNER_TEMP/pages-tool" --no-save --no-audit --no-fund wrangler@4.165.0
+      - name: Deploy the verified files to Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.MUSTER_EXTENSION_PAGES_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.MUSTER_EXTENSION_PAGES_ACCOUNT_ID }}
+          REDEPLOY: ${{ inputs.redeploy }}
+        run: |
+          if [[ "$REDEPLOY" != "true" ]] && curl --fail --silent --show-error --max-time 20 "$PAGES_ORIGIN/catalog.json" --output "$RUNNER_TEMP/live-extension-catalog.json" && cmp --silent "$RUNNER_TEMP/live-extension-catalog.json" "$RUNNER_TEMP/extension-pages/catalog.json"; then
+            echo 'Production already has the approved catalog.'
+            exit 0
+          fi
+          test -n "$CLOUDFLARE_API_TOKEN"
+          test -n "$CLOUDFLARE_ACCOUNT_ID"
+          "$RUNNER_TEMP/pages-tool/node_modules/.bin/wrangler" pages deploy "$RUNNER_TEMP/extension-pages" --project-name muster-extension-center --branch main
+      - name: Verify every production package
+        run: node scripts/verify-extension-center-mirror.mjs "$PAGES_ORIGIN" "$RUNNER_TEMP/extension-pages/catalog.json"
