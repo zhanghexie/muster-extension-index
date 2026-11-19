@@ -1,0 +1,17 @@
+name: 提交社区扩展
+description: 提交公开的 GitHub 扩展仓库供 Muster 审核
+title: '[社区扩展] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交一次仓库地址即可。审核通过后，已收录仓库的后续正式版本会由工作流定期发现。
+        请在仓库中创建 vX.Y.Z 版本标签，并在该标签对应的提交里放置 releases/X.Y.Z.json 安装包。
+  - type: input
+    id: repository
+    attributes:
+      label: 扩展仓库地址
+      description: 填写公开的 GitHub 仓库首页。
+      placeholder: https://github.com/owner/extension
+    validations:
+      required: true
