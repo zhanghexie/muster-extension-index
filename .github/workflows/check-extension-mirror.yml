@@ -1,0 +1,26 @@
+name: Check the extension mirror
+on:
+  push:
+    branches: [codex/extension-mirror-check]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mirror:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Build the six-package mirror from public releases
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          node scripts/build-extension-center-mirror.mjs
+          --catalog catalog.json
+          --output "$RUNNER_TEMP/extension-pages"
+          --origin https://muster-extension-center.pages.dev
